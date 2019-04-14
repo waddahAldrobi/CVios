@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A80E4A831F140E950015273A /* TinyYOLOv1.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = A80E4A821F140E7C0015273A /* TinyYOLOv1.mlmodel */; };
 		A82CB0201EF5A00700A20972 /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82CB01F1EF59F9C00A20972 /* PreviewView.swift */; };
 		A8538CDF1EF4EE39001C11D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8538CDE1EF4EE39001C11D4 /* AppDelegate.swift */; };
 		A8538CE11EF4EE39001C11D4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8538CE01EF4EE39001C11D4 /* ViewController.swift */; };
@@ -15,10 +14,10 @@
 		A8538CE61EF4EE39001C11D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8538CE51EF4EE39001C11D4 /* Assets.xcassets */; };
 		A8538CE91EF4EE39001C11D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8538CE71EF4EE39001C11D4 /* LaunchScreen.storyboard */; };
 		A8538CF51EF4EE85001C11D4 /* ImageConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = A8538CF41EF4EE85001C11D4 /* ImageConverter.m */; };
+		D439E1862259CDD40037BAB4 /* MyCustomObjectDetector.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = D439E1852259CDD40037BAB4 /* MyCustomObjectDetector.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A80E4A821F140E7C0015273A /* TinyYOLOv1.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = TinyYOLOv1.mlmodel; sourceTree = "<group>"; };
 		A82CB01F1EF59F9C00A20972 /* PreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewView.swift; sourceTree = "<group>"; };
 		A8538CDB1EF4EE39001C11D4 /* iOS-CoreML-Yolo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS-CoreML-Yolo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8538CDE1EF4EE39001C11D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -30,6 +29,7 @@
 		A8538CF21EF4EE85001C11D4 /* iOS-CoreML-Yolo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iOS-CoreML-Yolo-Bridging-Header.h"; sourceTree = "<group>"; };
 		A8538CF31EF4EE85001C11D4 /* ImageConverter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageConverter.h; sourceTree = "<group>"; };
 		A8538CF41EF4EE85001C11D4 /* ImageConverter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageConverter.m; sourceTree = "<group>"; };
+		D439E1852259CDD40037BAB4 /* MyCustomObjectDetector.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MyCustomObjectDetector.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +62,7 @@
 		A8538CDD1EF4EE39001C11D4 /* iOS-CoreML-Yolo */ = {
 			isa = PBXGroup;
 			children = (
-				A80E4A821F140E7C0015273A /* TinyYOLOv1.mlmodel */,
+				D439E1852259CDD40037BAB4 /* MyCustomObjectDetector.mlmodel */,
 				A82CB01F1EF59F9C00A20972 /* PreviewView.swift */,
 				A8538CDE1EF4EE39001C11D4 /* AppDelegate.swift */,
 				A8538CE01EF4EE39001C11D4 /* ViewController.swift */,
@@ -151,8 +151,8 @@
 			files = (
 				A8538CE11EF4EE39001C11D4 /* ViewController.swift in Sources */,
 				A8538CDF1EF4EE39001C11D4 /* AppDelegate.swift in Sources */,
-				A80E4A831F140E950015273A /* TinyYOLOv1.mlmodel in Sources */,
 				A8538CF51EF4EE85001C11D4 /* ImageConverter.m in Sources */,
+				D439E1862259CDD40037BAB4 /* MyCustomObjectDetector.mlmodel in Sources */,
 				A82CB0201EF5A00700A20972 /* PreviewView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

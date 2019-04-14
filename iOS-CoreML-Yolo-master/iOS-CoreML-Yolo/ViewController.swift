@@ -10,6 +10,7 @@ import UIKit
 import AVFoundation
 import CoreML
 
+@available(iOS 12.0, *)
 class ViewController: UIViewController {
 
     @IBOutlet weak var previewView: PreviewView!
@@ -25,7 +26,7 @@ class ViewController: UIViewController {
     private var permissionGranted = false
     
     // Model
-    let model = TinyYOLOv1() // In: Image<RGB,448,448> Out: MultiArray<Double,1470>
+    let model = MyCustomObjectDetector() // In: Image<RGB,448,448> Out: MultiArray<Double,1470>
     let modelInputSize = CGSize(width: 448, height: 448)
     
     //Output Results
@@ -284,6 +285,7 @@ class ViewController: UIViewController {
 
 }
 
+@available(iOS 12.0, *)
 extension ViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
     func captureOutput(_ output: AVCaptureOutput!, didOutputSampleBuffer sampleBuffer: CMSampleBuffer!, from connection: AVCaptureConnection!) {
         
@@ -292,16 +294,19 @@ extension ViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
         
         guard let pixelBuffer = UIImage(ciImage: ciImage).resize(modelInputSize)?.pixelBuffer() else { return }
         let start = NSDate()
-        let output = try? model.prediction(image: pixelBuffer)
+        let output = try? model.prediction(image: pixelBuffer, iouThreshold: 0.5, confidenceThreshold: 0.5)
         let end = NSDate()
         // Post-processing
-        let boxes = output2Box((output?.output)!)
+//        let boxes = output2Box((output?.output)!)
         //let ciimage = CIImage(cvPixelBuffer: pixelBuffer)
         
-        let imageS = self.drawRectangleOnImage(image: self.uiImage!, boxes: boxes)
+//        let imageS = self.drawRectangleOnImage(image: self.uiImage!, boxes: boxes)
         DispatchQueue.main.async {
-            self.imageView.image = imageS
-            self.probLabel.text = String(self.prob)
+            self.imageView.image = self.uiImage!
+//            self.probLabel.text = String(output?.confidence[0])
+            print(output?.confidence ?? 0)
+            print(output?.coordinates)
+            print(output?.featureNames)
             
             print(1/end.timeIntervalSince(start as Date))
         }
